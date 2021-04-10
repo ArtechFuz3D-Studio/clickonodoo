@@ -20,7 +20,7 @@ version: '3'
 services:
   web:
     container_name: odoo
-    image: countdocula/codooudo:latest
+    image: click0nrefresh/codooudo:latest
     depends_on:
       - db
     ports:
@@ -100,6 +100,6 @@ and Create and addons folder where you can add extra modules and apps to.
 
 /myproject/addons
 
-## Refer to this project structure for help: https://github.com/clickonrefresh/odoocustom
+
 
 
