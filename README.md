@@ -1,4 +1,4 @@
-![](https://user-images.githubusercontent.com/72121107/114127457-b6bcbb00-98fa-11eb-9d50-ce1bf6284859.png)
+
 
 # ODOOUDO *(pron-Oh Do You Do)
     by clickonrefresh
