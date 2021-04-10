@@ -20,7 +20,7 @@ version: '3'
 services:
   web:
     container_name: odoo
-    image: countdocula/clickonodoo:latest
+    image: countdocula/codooudo:latest
     depends_on:
       - db
     ports:
