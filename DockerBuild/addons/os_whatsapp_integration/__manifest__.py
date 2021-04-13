@@ -1,0 +1,32 @@
+{
+    'name': 'Odoo Whatsapp Integration',
+    'version': '14.0.0.1',
+    'summary': 'Odoo Whatsapp Integration',
+    'author': 'Odosquare',
+    'company': 'Odosquare',
+    'maintainer': 'Odosquare',
+    'sequence': 4,
+    'images': ['static/description/Banner.png'],
+    'license': 'LGPL-3',
+    'description': """Odoo Whatsapp Integration""",
+    'category': 'Connector',
+    'depends': [
+        'base', 'contacts', 'sale', 'crm', 'stock', 'sale_management', 'account', 'purchase'
+    ],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/whatsapp_template.xml',
+        'views/sale_wa.xml',
+        'views/crm_wa.xml',
+        'views/purchase_wa.xml',
+        'views/stock_wa.xml',
+        'views/invoice_wa.xml',
+        'views/contact_wa.xml',
+        'wizard/wizard.xml',
+    ],
+    'demo': [],
+    'qweb': [],
+    'installable': True,
+    'application': False,
+    'auto_install': False,
+}
