@@ -3,11 +3,9 @@
 # clickonodoo
     - by clickonrefresh/countdocula
 
-##Odoo v14 Custom Docker Image Build Repository
-###Customised Odoo ce, Python Pandas preinstalled.
+## Odoo v14 Custom Docker Image Build Repository
+### Customised Odoo ce, Python Pandas preinstalled.
 
-##This repo is the 'github autobuild' for clickonrefresh/clickonodoo custom odoo ce docker image.
-####This image is a modified version of the latest Odoo v14 official docker image.
 ----------------------
 
 # Run with docker-compose.yml:
