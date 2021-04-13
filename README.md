@@ -1,12 +1,18 @@
+![image](https://user-images.githubusercontent.com/72121107/114523314-789a0100-9c44-11eb-996a-47d8224635c7.png)
 
-clickonodoo
-by clickonrefresh/countdocula
-Odoo v14 Custom Docker Image Build Repository
-Customised Odoo ce, Python Pandas preinstalled.
-This repo is the 'github autobuild' for clickonrefresh/clickonodoo custom odoo ce docker image.
-This image is a modified version of the latest Odoo v14 official docker image.
-Run with docker-compose.yml:
+# clickonodoo
+    - by clickonrefresh/countdocula
 
+##Odoo v14 Custom Docker Image Build Repository
+###Customised Odoo ce, Python Pandas preinstalled.
+
+##This repo is the 'github autobuild' for clickonrefresh/clickonodoo custom odoo ce docker image.
+####This image is a modified version of the latest Odoo v14 official docker image.
+----------------------
+
+# Run with docker-compose.yml:
+
+```
 version: '3'
 services:
   web:
@@ -38,6 +44,7 @@ services:
 volumes:
   odoo-web-data:
   odoo-db-data:
+```
 
 In your project root, create the following directories and files to run odoo with custom configurations and extra addons:
 
@@ -45,6 +52,7 @@ Create an odoo.conf and config directory
 
 /myproject/config/odoo.conf
 
+```
 [options]
 addons_path = /mnt/extra-addons
 data_dir = /var/lib/odoo
@@ -82,6 +90,7 @@ data_dir = /var/lib/odoo
 ; xmlrpcs = True
 ; xmlrpcs_interface = 
 ; xmlrpcs_port = 8071
+```
 
 and Create and addons folder where you can add extra modules and apps to.
 
