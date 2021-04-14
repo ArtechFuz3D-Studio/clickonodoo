@@ -55,7 +55,7 @@ Create an odoo.conf and config directory
 
 ```
 [options]
-addons_path = /mnt/extra-addons
+addons_path = /mnt/extra-addons, /addons
 data_dir = /var/lib/odoo
 ; admin_passwd = admin
 ; csv_internal_sep = ,
