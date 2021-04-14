@@ -1,4 +1,5 @@
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/clickonrefresh/clickonodoo/Docker-Image-CI)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/clickonrefresh/clickonodoo/docker-build)
 ![image](https://user-images.githubusercontent.com/72121107/114523314-789a0100-9c44-11eb-996a-47d8224635c7.png)
 
 # Clickonodoo
