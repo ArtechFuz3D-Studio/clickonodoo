@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     container_name: customnameodoo
-    image: odoo:14.0
+    image: countdocula/clickonodoo:latest
     depends_on:
       - dbcustom
     ports:
