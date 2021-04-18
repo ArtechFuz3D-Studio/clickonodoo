@@ -10,3 +10,8 @@
    Customised Odoo ce, Python Pandas preinstalled.
 
 ----------------------
+# Run with:
+
+```
+bash install.sh
+```
