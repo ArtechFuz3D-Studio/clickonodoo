@@ -90,7 +90,6 @@ COPY wait-for-psql.py /usr/local/bin/wait-for-psql.py
 RUN chmod +x /usr/local/bin/wait-for-psql.py
 
 # Set default user when running the container
-RUN adduser -u 5678 --disabled-password --gecos "" odoo && chown -R odoo /app
 USER odoo
 
 ENTRYPOINT ["/entrypoint.sh"]
