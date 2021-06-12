@@ -18,6 +18,7 @@ RUN apt-get update && \
         node-less \
         npm \
         python3-num2words \
+        python3-pandas \
         python3-pdfminer \
         python3-pip \
         python3-phonenumbers \
