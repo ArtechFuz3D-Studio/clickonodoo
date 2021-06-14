@@ -15,3 +15,4 @@
 ```
 bash install.sh
 ```
+# [Join My Discord Community for Odoo Community Edition](https://discord.gg/kaVT7m9V4p)
