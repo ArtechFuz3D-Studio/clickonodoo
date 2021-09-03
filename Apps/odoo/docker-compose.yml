@@ -12,16 +12,15 @@ services:
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
     environment:
-      - HOST=dbcustom
-      - USER=odoocustom
-      - PASSWORD=custompassword
-      - APP_URL=customurl
-    restart: always
+      - PASSWORD_FILE=/run/secrets/postgresql_password
+    secrets:
+      - postgresql_password
+
   dbcustom:
     image: postgres:13
     environment:
       - POSTGRES_DB=postgres
-      - POSTGRES_PASSWORD=custompassword
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgresql_password
       - POSTGRES_USER=odoocustom
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
@@ -29,3 +28,7 @@ services:
 volumes:
   odoo-web-data:
   odoo-db-data:
+
+secrets:
+  postgresql_password:
+    file: odoo_pg_pass
