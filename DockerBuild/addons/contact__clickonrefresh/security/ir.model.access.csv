@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_contact__clickonrefresh_contact__clickonrefresh,contact__clickonrefresh.contact__clickonrefresh,model_contact__clickonrefresh_contact__clickonrefresh,base.group_user,1,1,1,1

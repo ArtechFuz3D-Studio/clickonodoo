@@ -63,3 +63,20 @@ python3-pandas \
 ## Finally push your changes to the registry
  
  ``` docker push ghcr.io/clickonrefresh/clickonodoo ```
+ fails with bad credential setup
+
+# How to scaffold a new app using docker
+
+## Enter the container
+
+``` docker exec -u root -it <containerID> /bin/bash ```
+
+## Inside the container, run
+
+``` /usr/bin/odoo scaffold <yourappname> /mnt/extra-addons ```
+
+### If you have used this repo to create an app then your newly creted app will appear in the project folders under odo/addons. This external path  has been mapped to /mnt/extra-addons inside the container.
+
+## Now change the file permissions to allow editing
+
+``` sudo chown -R $USER:$USER <yourappname> ```
