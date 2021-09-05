@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright Sudokeys (www.sudokeys.com)
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="product_template_search_view" model="ir.ui.view">
+        <field
+            name="name"
+        >product.template.view.search.inherit.purchase.subscription</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='filter_to_sell']" position="after">
+                <filter
+                    name="filter_recurring_po"
+                    string="Purchase Subscription products"
+                    domain="[('recurring_invoice_po', '=', True)]"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field
+            name="name"
+        >product.template.view.form.inherit.purchase.subscription</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='options']" position="inside">
+                <div>
+                    <field name="recurring_invoice_po" />
+                    <label for="recurring_invoice_po" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record
+        id="product_template_action_purchase_subscription"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Subscription Products</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_id" ref="product.product_template_tree_view" />
+        <field
+            name="search_view_id"
+            ref="purchase_subscription.product_template_search_view"
+        />
+        <field
+            name="context"
+        >{'default_recurring_invoice_po': True, 'search_default_filter_recurring_po': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                Click to define a new product.
+            </p>
+            <p>
+                You must define a product for everything you sell, whether it's
+                a physical product, a consumable or a service you offer to
+                customers.
+            </p>
+            <p>
+                The product form contains information to simplify the sale
+                process: price, notes in the quotation, accounting data,
+                procurement methods, etc.
+            </p>
+        </field>
+    </record>
+
+</odoo>

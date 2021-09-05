@@ -6,7 +6,7 @@ services:
     depends_on:
       - dbcustom
     ports:
-      - 8169:8069
+      - 8969:8069
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo

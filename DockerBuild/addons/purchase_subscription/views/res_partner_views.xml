@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright Sudokeys (www.sudokeys.com)
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="purchase_subscription_action_res_partner" model="ir.actions.act_window">
+        <field name="res_model">purchase.subscription</field>
+        <field
+            name="context"
+        >{'search_default_partner_id': [active_id], 'default_partner_id': active_id}</field>
+        <field name="name">Subscriptions</field>
+    </record>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.view.form.purchase.subscription</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority" eval="23" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    class="oe_stat_button"
+                    type="object"
+                    name="purchase_subscription_action_res_partner"
+                    icon="fa-book"
+                >
+                    <field
+                        name="po_subscription_count"
+                        string="Purchase Subs"
+                        widget="statinfo"
+                    />
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

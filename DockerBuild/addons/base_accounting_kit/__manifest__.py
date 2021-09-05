@@ -22,7 +22,7 @@
 
 {
     'name': 'Odoo 14 Full Accounting Kit',
-    'version': '14.0.2.6.5',
+    'version': '14.0.3.13.14',
     'category': 'Accounting',
     'live_test_url': 'https://www.youtube.com/watch?v=peAp2Tx_XIs',
     'summary': """ Asset and Budget Management,
@@ -30,6 +30,8 @@
                  Credit Limit, Follow Ups, 
                  Day-Bank-Cash book reports.""",
     'description': """
+                    AccountingKit, Fullaccounting, Odoo accounting, Odooaccounting, all in one accounting,
+                    allinoneaccounting, accounting, 
                     Odoo 14 Accounting,Accounting Reports, Odoo 14 Accounting 
                     PDF Reports, Asset Management, Budget Management, 
                     Customer Credit Limit, Recurring Payment,
@@ -44,11 +46,11 @@
                     Reconciliation Widget For Odoo14,
                     Payments Matching
                     """,
-    'author': ' Odoo SA,Cybrosys Techno Solutions',
+    'author': 'Cybrosys Techno Solutions, Odoo SA',
     'website': "https://www.cybrosys.com",
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
-    'depends': ['base', 'account', 'sale', 'account_check_printing'],
+    'depends': ['base', 'account', 'sale', 'account_check_printing', 'base_account_budget'],
     'data': [
         'security/ir.model.access.csv',
         'security/security.xml',
@@ -58,10 +60,12 @@
         'data/followup_levels.xml',
         'data/account_asset_data.xml',
         'data/recurring_entry_cron.xml',
+        'data/multiple_invoice_data.xml',
         'views/assets.xml',
         'views/dashboard_views.xml',
         'views/reports_config_view.xml',
         'views/accounting_menu.xml',
+        'views/account_group.xml',
         'views/credit_limit_view.xml',
         'views/account_configuration.xml',
         'views/account_payment_view.xml',
@@ -76,6 +80,8 @@
         'views/account_asset_templates.xml',
         'views/product_template_views.xml',
         'views/payment_matching.xml',
+        'views/multiple_invoice_layout_view.xml',
+        'views/multiple_invoice_form.xml',
         'wizard/financial_report.xml',
         'wizard/general_ledger.xml',
         'wizard/partner_ledger.xml',
@@ -101,6 +107,8 @@
         'report/account_day_book_view.xml',
         'report/account_asset_report_views.xml',
         'report/report.xml',
+        'report/multiple_invoice_layouts.xml',
+        'report/multiple_invoice_report.xml',
     ],
     'qweb': [
         'static/src/xml/template.xml',

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_purchase_subscription_user,purchase.subscription,model_purchase_subscription,base.group_user,1,0,0,0
+access_purchase_subscription,purchase.subscription,model_purchase_subscription,account.group_account_user,1,1,1,1
+access_purchase_sibscription_line_user,purchase.subscription.line,model_purchase_subscription_line,base.group_user,1,0,0,0
+access_purchase_sibscription_line,purchase.subscription.line,model_purchase_subscription_line,account.group_account_user,1,1,1,1

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright Sudokeys (www.sudokeys.com)
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="account_move_form_purchase_subscription" model="ir.ui.view">
+        <field name="name">account.move.form.purchase.subscription</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_origin']" position="after">
+                <field
+                    name="subscription_id"
+                    readonly="1"
+                    attrs="{'invisible': [('subscription_id','=',False)]}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright Sudokeys (www.sudokeys.com)
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <!-- Multi-company -->
+    <record model="ir.rule" id="purchase_subscription_multicompany">
+        <field name="name">Purchase Subscription multi-company</field>
+        <field name="model_id" ref="model_purchase_subscription" />
+        <field name="global" eval="True" />
+        <field
+            name="domain_force"
+        >['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+
+    <record model="ir.rule" id="purchase_subscription_line_multicompany">
+        <field name="name">Purchase Subscription line multi-company</field>
+        <field name="model_id" ref="model_purchase_subscription_line" />
+        <field name="global" eval="True" />
+        <field
+            name="domain_force"
+        >['|',('p_subscription_id.company_id','=',False),('p_subscription_id.company_id','child_of',[user.company_id.id])]</field>
+    </record>
+
+</odoo>

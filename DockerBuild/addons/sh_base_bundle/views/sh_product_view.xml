@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sh_product_form_view" model="ir.ui.view">
+        <field name="name">sh.product.form.view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <field name="sale_ok" position="before">
+                <field name="sh_is_bundle" />
+                <label for="sh_is_bundle" string="Is Bundled ?" />
+                <div />
+            </field>
+            <xpath expr="//div[@name='pricing']" position="after">
+                <button name="compute_bundle_price" string="Compute Bundle Sales Price" type="object" class="btn-primary" attrs="{'invisible':[('sh_is_bundle','=',False)]}" />
+            </xpath>
+            
+            <field name="company_id" position="before">
+           		<button name="compute_bundle_cost_price" string="Compute Bundle Cost Price" type="object" class="btn-primary"
+           		 attrs="{'invisible':[('sh_is_bundle','=',False)]}"/>
+           	</field>
+            <xpath expr="//notebook//page[last()]" position="after">
+                <page string="Pack/Bundle Products" attrs="{'invisible':[('sh_is_bundle','=',False)]}">
+                    <field name="sh_bundle_product_ids">
+                        <form string="Product Bundles">
+                            <group>
+                                <group>
+                                    <field name="sh_product_id" />
+                                    <field name="sh_qty" />
+                                    <field name="sh_uom" />
+                                    <field name="sh_cost_price"/>
+                                    <field name="sh_price_unit" />
+                                    <field name="sh_price_subtotal" force_save="1" />
+                                </group>
+                            </group>
+                        </form>
+                        <tree editable="bottom">
+                            <field name="sh_product_id" />
+                            <field name="sh_qty" />
+                            <field name="sh_uom" />
+                            <field name="sh_cost_price"/>
+                            <field name="sh_price_unit" />
+                            <field name="sh_price_subtotal" force_save="1" />
+                        </tree>
+                    </field>
+                    <group name="note_group" col="6">
+                        <group class="oe_subtotal_footer oe_right" colspan="2" name="pack_total">
+                            <field name="sh_amount_total" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                        </group>
+                        <div class="oe_clear" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="sh_bundled_products" model="ir.actions.act_window">
+        <field name="name">Bundle Products</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="view_id" ref="product.product_template_kanban_view" />
+        <field name="search_view_id" ref="product.product_template_search_view" />
+        <field name="context">{}</field>
+        <field name="domain">[('sh_is_bundle','=',True)]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new product
+            </p>
+            <p>
+                You must define a product for everything you sell or purchase, whether it's a storable product, a consumable or a service.
+            </p>
+        </field>
+    </record>
+    <menuitem id="bundle_product_menu" name="Bundle Products" action="sh_bundled_products" sequence="99" />
+</odoo>
