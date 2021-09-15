@@ -2,11 +2,11 @@ version: '3'
 services:
   web:
     container_name: customnameodoo
-    image: ghcr.io/clickonrefresh/clickonodoo
+    image: ghcr.io/clickonrefresh/clickonodoo:main
     depends_on:
       - dbcustom
     ports:
-      - 8969:8069
+      - 8069:8069
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo

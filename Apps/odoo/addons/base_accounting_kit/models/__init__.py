@@ -34,5 +34,3 @@ from . import res_config_settings
 from . import res_partner
 from . import account_dashboard
 from . import payment_matching
-from . import multiple_invoice
-from . import multiple_invoice_layout

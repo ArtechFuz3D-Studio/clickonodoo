@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="whatsapp_sale_view_form" model="ir.ui.view">
+            <field name="name">whatsapp.view.form.inherit.sale</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <header>
+                    <button name="sale_whatsapp" string="Send Whatsapp" type="object" class="btn-secondary"
+                            icon="fa-whatsapp" context="{'default_user_id' : partner_id}" states="sale"/>
+                </header>
+            </field>
+        </record>
+    </data>
+</odoo>
+

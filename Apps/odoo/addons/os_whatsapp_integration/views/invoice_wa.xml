@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="whatsapp_account_view_form" model="ir.ui.view">
+            <field name="name">whatsapp.view.form.inherit.account</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <header>
+                    <button name="invoice_whatsapp" string="Send Whatsapp" type="object" class="btn-secondary"
+                            icon="fa-whatsapp" context="{'default_user_id' : partner_id}" states="posted"/>
+                </header>
+            </field>
+        </record>
+    </data>
+</odoo>

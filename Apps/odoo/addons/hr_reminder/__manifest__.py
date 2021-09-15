@@ -24,7 +24,7 @@
     'version': '14.0.1.0.0',
     'category': 'Generic Modules/Human Resources',
     'summary': 'HR Reminder For OHRMS',
-    'author': 'Cybrosys Techno solutions,Open HRMS',
+    'author': 'Cybrosys Techno Solutions',
     'company': 'Cybrosys Techno Solutions',
     'website': "https://www.openhrms.com",
     'depends': ['base', 'hr'],
