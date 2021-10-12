@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 MAINTAINER Odoo S.A. <info@odoo.com>
 
 SHELL ["/bin/bash", "-xo", "pipefail", "-c"]
@@ -14,15 +14,18 @@ RUN apt-get update && \
         dirmngr \
         fonts-noto-cjk \
         gnupg \
+        # TO REEMOVE WHEN PACKAGED
+        gsfonts \
         libssl-dev \
         node-less \
         npm \
         python3-num2words \
-        python3-pandas \
         python3-pdfminer \
         python3-pip \
         python3-phonenumbers \
         python3-pyldap \
+        # TO REMOVE WHEN PACKAGED
+        python3-openssl \
         python3-qrcode \
         python3-renderpm \
         python3-setuptools \
@@ -38,7 +41,7 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
 
 # install latest postgresql-client
-RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
+RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ bullseye-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
     && GNUPGHOME="$(mktemp -d)" \
     && export GNUPGHOME \
     && repokey='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8' \
@@ -55,9 +58,9 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/
 RUN npm install -g rtlcss
 
 # Install Odoo
-ENV ODOO_VERSION 14.0
+ENV ODOO_VERSION 15.0
 ARG ODOO_RELEASE=20211007
-ARG ODOO_SHA=183bc4f2d640b53d5e2fb8fc06a1915a432c9ac7
+ARG ODOO_SHA=aee026f813f334400aa49dc857d4043719f8f395
 RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb \
     && echo "${ODOO_SHA} odoo.deb" | sha1sum -c - \
     && apt-get update \
@@ -69,16 +72,10 @@ COPY ./entrypoint.sh /
 COPY ./odoo.conf /etc/odoo/
 
 # Set permissions and Mount /var/lib/odoo to allow restoring filestore and /mnt/extra-addons for users addons
-RUN chmod +x /entrypoint.sh
-
 RUN chown odoo /etc/odoo/odoo.conf \
     && mkdir -p /mnt/extra-addons \
     && chown -R odoo /mnt/extra-addons
-VOLUME ["/var/lib/odoo", "/mnt/extra-addons", "/addons"]
-
-COPY ./addons/ /addons
-#RUN chmod +x /addons
-#RUN chown -R odoo /addons
+VOLUME ["/var/lib/odoo", "/mnt/extra-addons"]
 
 # Expose Odoo services
 EXPOSE 8069 8071 8072
@@ -87,7 +84,6 @@ EXPOSE 8069 8071 8072
 ENV ODOO_RC /etc/odoo/odoo.conf
 
 COPY wait-for-psql.py /usr/local/bin/wait-for-psql.py
-RUN chmod +x /usr/local/bin/wait-for-psql.py
 
 # Set default user when running the container
 USER odoo
