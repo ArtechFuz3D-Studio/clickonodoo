@@ -29,25 +29,25 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-
   && su - ${USER}
 
 # Run Nginx
-  && cd Apps \
+cd Apps \
   && cd nginx \
   && docker-compose up -d \
-  && cd .. \
+  && cd ..
 
 # Run Odoo
-  && cd Apps \
+cd Apps \
   && cd odoo \
   && docker-compose up -d \
-  && cd .. \
+  && cd ..
 
 # Run Noip-DUC
-  && cd /opt \
+cd /opt \
   && sudo mkdir noip && cd noip \
   && sudo wget https://github.com/clickonrefresh/Automate-Noip-DUC/archive/main.zip \
   && sudo unzip main.zip \
   && cd Automate-Noip-DUC-main \
-  && sudo bash noip-duc.sh \
+  && sudo bash noip-duc.sh
 
-# Clean up
-  && sudo apt-get update \
+# Clean Up
+sudo apt-get update \
   && sudo apt-get autoremove -y
