@@ -1,6 +1,9 @@
 # ! Branch 15.0 is currently broken, if you want to use v15.0, pull from dev, but be warned this branch is undergoing regular changes.
 
 - should be fixed by DEC 10 2021
+- email: admin
+- password: admin
+- ! change after installing
 
 ![image](https://user-images.githubusercontent.com/72121107/114523314-789a0100-9c44-11eb-996a-47d8224635c7.png)
 
