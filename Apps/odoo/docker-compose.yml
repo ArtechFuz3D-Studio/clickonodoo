@@ -1,8 +1,8 @@
-version: '3'
+version: '3.1'
 services:
   web:
     container_name: customnameodoo
-    image: ghcr.io/clickonrefresh/clickonodoo:main
+    image: ghcr.io/clickonrefresh/clickonodoo:15
     depends_on:
       - dbcustom
     ports:

@@ -1,16 +1,17 @@
-# ! Branch 15.0 is currently broken, if you want to use v15.0, pull from dev, but be warned this branch is undergoing regular changes.
+<!-- # ! Branch 15.0 is currently broken, if you want to use v15.0, pull from dev, but be warned this branch is undergoing regular changes.
 
 use these details for initial set up on v15
 
 - email: admin
 - password: admin
-- ! change after installing
+- ! change after installing -->
 
 ![image](https://user-images.githubusercontent.com/72121107/114523314-789a0100-9c44-11eb-996a-47d8224635c7.png)
 
 # Clickonodoo
 
 by clickonrefresh/countdocula
+[Join My Discord Community for help with Odoo or to connect](https://discord.gg/46kKJ5VeHt)
 
 # Odoo | Open HRMS | Base Accounting Kit | Python-Pandas
 
@@ -32,9 +33,14 @@ chmod +x install.sh
 ./install.sh
 ```
 
-# [Join My Discord Server for Odoo Community Edition](https://discord.gg/kaVT7m9V4p)
+or
 
-# How to update this image via Dockerfile
+``` bash install.sh ```
+
+
+
+
+<!-- # How to update this image via Dockerfile
 
 Make sure your Dockerfile, entrypoint.sh, odoo.conf and wait-for-psql.py files are up to date with the latest (official Odoo docker repo)[https://github.com/odoo/docker]
 
@@ -95,4 +101,4 @@ fails with bad credential setup
 
 ## Now change the file permissions to allow editing
 
-`sudo chown -R $USER:$USER <yourappname>`
+`sudo chown -R $USER:$USER <yourappname>` -->
