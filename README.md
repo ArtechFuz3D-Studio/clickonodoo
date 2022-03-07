@@ -6,12 +6,14 @@ use these details for initial set up on v15
 - password: admin
 - ! change after installing -->
 
+# ! Repo is undergoing maintainence. V15 is working
+
 ![image](https://user-images.githubusercontent.com/72121107/114523314-789a0100-9c44-11eb-996a-47d8224635c7.png)
 
 # Clickonodoo
 
-by clickonrefresh/countdocula
-[Join My Discord Community for help with Odoo or to connect](https://discord.gg/46kKJ5VeHt)
+by clickonrefresh
+[Join My Odoo Discord Community](https://discord.gg/46kKJ5VeHt)
 
 # Odoo | Open HRMS | Base Accounting Kit | Python-Pandas
 
@@ -35,7 +37,10 @@ chmod +x install.sh
 
 or
 
-``` bash install.sh ```
+``` 
+bash install.sh 
+```
+
 
 
 
