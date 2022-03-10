@@ -107,3 +107,9 @@ fails with bad credential setup
 ## Now change the file permissions to allow editing
 
 `sudo chown -R $USER:$USER <yourappname>` -->
+
+<!-- https://docs.docker.com/engine/reference/commandline/login/#credentials-store -->
+
+To Do
+[] Update v15 dockerfile
+[] build 13 and 15 and push to registry

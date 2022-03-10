@@ -1,0 +1,31 @@
+version: '3.1'
+services:
+  web:
+    container_name: customnameodoo
+    image: ghcr.io/clickonrefresh/clickonodoo:15
+    depends_on:
+      - dbcustom
+    ports:
+      - 8069:8069
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    environment:
+      - HOST=dbcustom
+      - USER=odoocustom
+      - PASSWORD=custompassword
+      - APP_URL=customurl
+    restart: always
+  dbcustom:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=custompassword
+      - POSTGRES_USER=odoocustom
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data/pgdata
+volumes:
+  odoo-web-data:
+  odoo-db-data:

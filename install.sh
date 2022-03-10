@@ -35,6 +35,7 @@ mkdir -p ~/.docker/cli-plugins/ \
   && sudo chown $USER /var/run/docker.sock
 
 sudo usermod -aG docker ${USER}
+
 # # Run Nginx
 # cd Apps \
 #   && cd nginx \
