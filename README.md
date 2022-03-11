@@ -1,12 +1,4 @@
-<!-- # ! Branch 15.0 is currently broken, if you want to use v15.0, pull from dev, but be warned this branch is undergoing regular changes.
-
-use these details for initial set up on v15
-
-- email: admin
-- password: admin
-- ! change after installing -->
-
-# ! Repo is undergoing maintainence. V15 is working
+# ! Repo is undergoing maintainence.
 
 ![image](https://user-images.githubusercontent.com/72121107/114523314-789a0100-9c44-11eb-996a-47d8224635c7.png)
 
@@ -15,29 +7,32 @@ use these details for initial set up on v15
 by clickonrefresh
 [Join My Odoo Discord Community](https://discord.gg/46kKJ5VeHt)
 
-# Odoo | Open HRMS | Base Accounting Kit | Python-Pandas
+# Odoo with Open HRMS 
 
 ### [Odoo v14 Custom Docker Image Build Repository](https://github.com/clickonrefresh/clickonodoo/pkgs/container/clickonodoo)
 
-Customised Odoo ce with Open HRMS and a Full accounting Kit available for install, Python Pandas preinstalled for use with HRMS.
+Customised Odoo ce with Open HRMS available for install, Python Pandas preinstalled.
 
 Before installing third party modules, please see their relative dependency modules which must be installed prior to 3rd party module install.
 
 ---
 
-# Run with:
+# Using this repo
+In Apps you will find the docker compose file along with odoo.conf and any addons. These are the files required to run Odoo.
+
+### Navigate to the version folder and run
 
 ```
-chmod +x install.sh
+docker compose up -d
 ```
 
-```
-./install.sh
-```
+This will pull the relative odoo version image from ghcr.io/clickonrefresh/clickonodoo and configure volumes, port mapping and configure postgresql.
 
-or
 
-``` 
+# Install.sh will install docker, docker compose and some other dependencies:
+
+
+```
 bash install.sh 
 ```
 
@@ -111,5 +106,4 @@ fails with bad credential setup
 <!-- https://docs.docker.com/engine/reference/commandline/login/#credentials-store -->
 
 To Do
-[] Update v15 dockerfile
 [] build 13 and 15 and push to registry

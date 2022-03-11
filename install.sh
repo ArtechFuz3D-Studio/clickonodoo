@@ -4,28 +4,26 @@ sudo apt-get update \
   && sudo apt-get install wget -y \
   && sudo apt-get update
 
-# Install Node via Node Version Manager
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-# run these commands to startup nvm
-export NVM_DIR="$HOME/.nvm" 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-# Install Node --lts version
-nvm install --lts
-# If you use yarn
-# corepack enable
+# # Install Node via Node Version Manager
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+# # run these commands to startup nvm
+# export NVM_DIR="$HOME/.nvm" 
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# # Install Node --lts version
+# nvm install --lts
+# # If you use yarn
+# # corepack enable
 
 # Install Docker
 sudo apt update
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 sudo apt update
 apt-cache policy docker-ce
-sudo apt install docker-ce 
+sudo apt install docker-ce -y
 # sudo systemctl status docker
-
-
 
 
 # Install Docker-Compose
