@@ -7,11 +7,11 @@ sudo apt install -y git python3-pip build-essential wget python3-dev python3-ven
   && sudo apt install -y liblcms2-dev libwebp-dev libharfbuzz-dev libfribidi-dev libxcb1-dev
 
 # Creating a System User
-# sudo useradd -m -d /opt/odoo15 -U -r -s /bin/bash odoo15
+sudo useradd -m -d /opt/odoo15 -U -r -s /bin/bash odoo15
 
 # Install Postgresql
-# sudo apt install postgresql
-# sudo su - postgres -c "createuser -s odoo15"
+sudo apt install postgresql
+sudo su - postgres -c "createuser -s odoo15"
 
 sudo wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb
 sudo apt install ./wkhtmltox_0.12.5-1.bionic_amd64.deb
