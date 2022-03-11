@@ -46,13 +46,13 @@ sudo usermod -aG docker ${USER}
 #   && docker-compose up -d \
 #   && cd ..
 
-# # Run Noip-DUC
-# cd /opt \
-#   && sudo mkdir noip && cd noip \
-#   && sudo wget https://github.com/clickonrefresh/Automate-Noip-DUC/archive/main.zip \
-#   && sudo unzip main.zip \
-#   && cd Automate-Noip-DUC-main \
-#   && sudo bash noip-duc.sh
+# Run Noip-DUC
+cd /opt \
+  && sudo mkdir noip && cd noip \
+  && sudo wget https://github.com/clickonrefresh/Automate-Noip-DUC/archive/main.zip \
+  && sudo unzip main.zip \
+  && cd Automate-Noip-DUC-main \
+  && sudo bash noip-duc.sh
 
 # # Clean Up
 # sudo apt-get update \

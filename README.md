@@ -1,15 +1,14 @@
-# ! Repo is undergoing maintainence.
-
 ![image](https://user-images.githubusercontent.com/72121107/114523314-789a0100-9c44-11eb-996a-47d8224635c7.png)
 
 # Clickonodoo
 
 by clickonrefresh
+
 [Join My Odoo Discord Community](https://discord.gg/46kKJ5VeHt)
 
-# Odoo with Open HRMS 
+## Odoo with Open HRMS and Nginx Proxy Manager
 
-### [Odoo v14 Custom Docker Image Build Repository](https://github.com/clickonrefresh/clickonodoo/pkgs/container/clickonodoo)
+### [ghcr.io/clickonrefresh/clickonodoo](https://github.com/clickonrefresh/clickonodoo/pkgs/container/clickonodoo)
 
 Customised Odoo ce with Open HRMS available for install, Python Pandas preinstalled.
 
@@ -20,7 +19,7 @@ Before installing third party modules, please see their relative dependency modu
 # Using this repo
 In Apps you will find the docker compose file along with odoo.conf and any addons. These are the files required to run Odoo.
 
-### Navigate to the version folder and run
+### Navigate into Apps/ and your desired Odoo version or Nginx and run:
 
 ```
 docker compose up -d
@@ -29,7 +28,9 @@ docker compose up -d
 This will pull the relative odoo version image from ghcr.io/clickonrefresh/clickonodoo and configure volumes, port mapping and configure postgresql.
 
 
-# Install.sh will install docker, docker compose and some other dependencies:
+
+# Install.sh will install docker, docker compose and some other prerequisites:
+comment out the lines for nodejs install if you do not intend to use odoo for development
 
 
 ```
@@ -105,5 +106,3 @@ fails with bad credential setup
 
 <!-- https://docs.docker.com/engine/reference/commandline/login/#credentials-store -->
 
-To Do
-[] build 13 and 15 and push to registry
