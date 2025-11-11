@@ -1,14 +1,15 @@
 ![image](https://user-images.githubusercontent.com/72121107/114523314-789a0100-9c44-11eb-996a-47d8224635c7.png)
 
+! **Project Requires Update**
+
 # Clickonodoo
 
 by clickonrefresh
 
-[Join My Odoo Discord Community](https://discord.gg/46kKJ5VeHt)
+
 
 ## Odoo with Open HRMS and Nginx Proxy Manager
 
-### [ghcr.io/clickonrefresh/clickonodoo](https://github.com/clickonrefresh/clickonodoo/pkgs/container/clickonodoo)
 
 Customised Odoo ce with Open HRMS available for install, Python Pandas preinstalled.
 
